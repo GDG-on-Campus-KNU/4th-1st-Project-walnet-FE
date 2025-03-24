@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
-import Header from "./components/common/Header";
+import BottomNav from "./components/common/BottomNav";
 
 export const Router = () => {
     return (
         <>
-          <Header />
             <Routes>
                 <Route path="/" element={<MainPage />} />
             </Routes>
+            <BottomNav />
         </>
     );
 };
