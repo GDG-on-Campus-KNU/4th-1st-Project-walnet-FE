@@ -31,11 +31,7 @@ const MainPage = () => {
         <div className="h-[415x] mt-6 rounded-2xl bg-[#E9EFF6] p-5 ">
           <div className="pb-2 flex justify-between">
             <h2 className="text-base">외화 지갑</h2>
-            <img
-              src="/assets/png/점점점.png"
-              alt="dotdotdot"
-              className="w-[4px] h-[16px]"
-            />
+            <div>더보기</div>
           </div>
           <div className="mt-4">
             <div className="flex justify-between items-center py-2 pl-3.5">
