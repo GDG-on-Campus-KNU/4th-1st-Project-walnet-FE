@@ -16,9 +16,9 @@ jobs:
 
       # Node.js 버전 설정
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: 'node'
 
       # BASEURL env 생성 및 설정
     - name: Create Env Variables
@@ -30,6 +30,7 @@ jobs:
         npm install
         npm run build
 
+    # 원격으로 접속해서 배포
     - name: Install sshpass
       run: sudo apt-get install -y sshpass  # sshpass 설치
 
@@ -44,9 +45,6 @@ jobs:
     - name: Deploy to Server - Set Permissions
       run: |
        sshpass -p "${{ secrets.PASSWORD }}" ssh -o StrictHostKeyChecking=no -p 50 admin@${{ secrets.HOST }} "chmod -R 755 /var/www/html/dist"
-
-    - name: Debug Secrets
-      run: echo "Password-> ${{ secrets.PASSWORD }}"
       
     - name: Deploy to Server - Restart Nginx
       run: |
