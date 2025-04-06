@@ -4,8 +4,9 @@ import Step2EnterEmail from '../../components/SignUp/Step2EnterEmail';
 import Step3EmailVerification from '../../components/SignUp/Step3EmailVerification';
 import Step4EnterPassword from '../../components/SignUp/Step4EnterPassword';
 import Step5EnterBank from '../../components/SignUp/Step5EnterBank';
-import Step6BankVerification from '../../components/SignUp/Step6BankVerification';
-import Step7Complete from '../../components/SignUp/Step7Complete';
+import Step7BankVerification from '../../components/SignUp/Step7BankVerification';
+import Step8Complete from '../../components/SignUp/Step8Complete';
+import Step6EnterBankAccount from '../../components/SignUp/Step6EnterBankAccount';
 
 const SignUpPage: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -18,8 +19,9 @@ const SignUpPage: React.FC = () => {
     case 3: return <Step3EmailVerification onNext={nextStep} />;
     case 4: return <Step4EnterPassword onNext={nextStep} />;
     case 5: return <Step5EnterBank onNext={nextStep} />;
-    case 6: return <Step6BankVerification onNext={nextStep} />;
-    case 7: return <Step7Complete />;
+    case 6: return <Step6EnterBankAccount onNext={nextStep} />;
+    case 7: return <Step7BankVerification onNext={nextStep} />;
+    case 8: return <Step8Complete />;
     default: return null;
   }
 };

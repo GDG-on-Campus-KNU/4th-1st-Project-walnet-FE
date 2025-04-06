@@ -11,6 +11,9 @@ const Step1EnterName: React.FC<{ onNext: () => void }> = ({ onNext }) => {
     onNext();
   };
 
+  const trimmedName = name.trim();
+  const isValid = trimmedName.length > 0;
+
   return (
     <div className="flex flex-col min-h-[100dvh] p-5 pt-[52px] pb-6 bg-white overflow-y-auto">
       <div className="text-[26px] font-semibold mb-7 tracking-[-1px]">
@@ -25,7 +28,7 @@ const Step1EnterName: React.FC<{ onNext: () => void }> = ({ onNext }) => {
         onChange={(e) => setName(e.target.value)}
         className="border-b placeholder:text-[#B2B2B2] border-gray-300 py-2 text-base mb-10 focus:outline-none focus:border-[#98B4E3]"
       />
-      <FloatingButton onClick={handleNext} disabled={!name.trim()}>
+      <FloatingButton onClick={handleNext} disabled={!isValid}>
         다음
       </FloatingButton>
     </div>

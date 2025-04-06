@@ -4,9 +4,11 @@ import { create } from "zustand";
 type SignupData = {
   name: string;
   email: string;
+  veriEmail: string;
   password: string;
   bank: string;
   accountNumber: string;
+  veriAccount: string;
 };
 
 type Store = {
