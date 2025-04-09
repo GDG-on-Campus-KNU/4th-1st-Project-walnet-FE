@@ -20,7 +20,7 @@ const Step1EnterName: React.FC<{ onNext: () => void }> = ({ onNext }) => {
         <span className="text-[#98B4E3]">본인확인</span>을 진행해주세요
       </div>
 
-      <label className="text-sm text-[#98B4E3] mb-3 font-bold">이름</label>
+      <label className="text-sm text-[#98B4E3] mb-1 font-bold">이름</label>
       <input
         type="text"
         placeholder="이름을 입력해주세요"
