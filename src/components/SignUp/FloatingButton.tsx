@@ -16,7 +16,7 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({
       <button
         onClick={onClick}
         disabled={disabled}
-        className={`w-[362px] h-[64px] text-xl rounded-xl font-semibold ${
+        className={`w-full h-[64px] text-xl rounded-xl font-semibold ${
           disabled ? 'bg-[#B2B2B2] text-[#454545]' : 'bg-[#98B4E3] text-white'
         }`}
       >
