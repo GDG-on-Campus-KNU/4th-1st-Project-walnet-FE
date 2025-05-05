@@ -129,7 +129,7 @@ const MainPage = () => {
 
             {/* PayForm 슬라이딩 */}
             <motion.div
-              className="fixed left-0 right-0 bottom-0 z-40 h-[80vh] bg-white rounded-t-3xl"
+              className="fixed left-0 right-0 bottom-0 z-40 h-[80vh] max-w-[410px] w-full mx-auto bg-white rounded-t-3xl"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
