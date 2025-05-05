@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const BottomNav = () => {
     return (
-        <div className="max-w-[400px] mx-auto fixed z-50 bottom-0 left-0 right-0 bg-[#F4F6F8] text-black py-2">
+        <div className="max-w-[410px] mx-auto fixed z-50 bottom-0 left-0 right-0 bg-[#F4F6F8] text-black py-2">
             <div className="flex justify-around">
                 <Link to="/" className="flex flex-col items-center">
                     <img

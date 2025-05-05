@@ -1,4 +1,10 @@
+import PayForm from "../../components/Pay/PayForm";
+import { AnimatePresence, motion, PanInfo } from "framer-motion";
+import { useUIStore } from "../../stores/uiStore";
+
 const MainPage = () => {
+  const { isPayFormVisible, showPayForm, hidePayForm } = useUIStore();
+
   return (
     <div className="flex flex-col justify-between min-h-screen overflow-y-auto pt-[60px] pb-[64px]">
       <div className="flex-grow px-5">
@@ -101,11 +107,49 @@ const MainPage = () => {
         </div>
       </div>
       {/* 결제하기 버튼 */}
-      <div className="fixed bottom-[64px] left-0 right-0 max-w-[400px] mx-auto z-50">
-        <button className="w-full h-[64px] bg-[#283C58] text-[#FCFCFD] rounded-t-2xl text-base">
+      <div className="fixed bottom-[64px] left-0 right-0 max-w-[400px] mx-auto z-20">
+        <button
+          className="w-full h-[64px] bg-[#283C58] text-[#FCFCFD] rounded-t-2xl text-base"
+          onClick={showPayForm}
+        >
           결제하기
         </button>
       </div>
+      <AnimatePresence>
+        {isPayFormVisible && (
+          <>
+            {/* 딤처리: Header까지 덮음 */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40"
+              onClick={hidePayForm}
+            />
+
+            {/* PayForm 슬라이딩 */}
+            <motion.div
+              className="fixed left-0 right-0 bottom-0 z-40 h-[80vh] bg-white rounded-t-3xl"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", stiffness: 400, damping: 40 }}
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              onDragEnd={(
+                event: MouseEvent | TouchEvent | PointerEvent,
+                info: PanInfo
+              ) => {
+                if (info.offset.y > 150) {
+                  hidePayForm();
+                }
+              }}
+            >
+              <PayForm onClose={hidePayForm} hasHeader={false} />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

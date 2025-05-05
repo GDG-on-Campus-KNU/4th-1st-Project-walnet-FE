@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="fixed z-50 top-0 left-0 right-0 w-full max-w-[420px] mx-auto h-[60px] flex justify-between items-center px-4 bg-[#F4F6F8]">
+    <header className="fixed z-40 top-0 left-0 right-0 w-full max-w-[410px] mx-auto h-[60px] flex justify-between items-center px-4 bg-[#F4F6F8]">
       <div className="flex items-center">
         <img
           src="/assets/png/walnet logo.png"
