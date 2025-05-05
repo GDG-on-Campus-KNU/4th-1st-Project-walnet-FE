@@ -137,7 +137,7 @@ const MainPage = () => {
               drag="y"
               dragConstraints={{ top: 0, bottom: 0 }}
               onDragEnd={(
-                event: MouseEvent | TouchEvent | PointerEvent,
+                _event: MouseEvent | TouchEvent | PointerEvent,
                 info: PanInfo
               ) => {
                 if (info.offset.y > 150) {
